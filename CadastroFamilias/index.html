@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Famílias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+    <script src="cadastro.js" defer></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter;
+            display: flex;
+            justify-content: center;
+        }
+
+        img{
+            width: 80px;
+            margin-top: 30px;
+        }
+
+        .container {
+            width: 80%;
+            height: 100vh;
+        }
+
+        h2 {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        h3{
+            margin-top: 32px;
+        }
+
+        input {
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .tipoAjuda {
+            display: block;
+        }
+
+        .dados {
+            border: 2px solid #cfcfcf;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        legend{
+            margin-bottom: 16px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 50px;
+        }
+        button {
+            font-size: 20px;
+            background-color: blue;
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid blue;
+        }
+
+        button:hover{
+            background-color: whitesmoke;
+            transition: .5s;
+        }
+
+        #nroMoradores{
+            width: 24%;
+        }
+
+        #confMoradores{
+            font-size: 15px;
+            background-color: #fff;
+            color: blue;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid blue;
+        }
+
+        #confMoradores:hover{
+            background-color: whitesmoke;
+            transition: .5s;
+        }
+
+        textarea{
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="cadastro">
+            <img src="prefsl.png" alt="">
+            <h2>Cadastro ajuda familiar</h2>
+
+            <form action="http://172.233.212.103/~cad/g2">
+
+                <h3>Informações pessoais</h3>
+                <div class="dados">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id='txNome' name="nome" placeholder="Preencha com nome">
+
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="txCpf" name="cpf" placeholder="Preencha com CPF">
+
+                    <label for="rg">RG:</label>
+                    <input type="text" id="txRg" name="rg" placeholder="Preencha com RG">
+
+                    <label for="dtNascimento">Data de Nascimento:</label>
+                    <input type="date" id="dtNascimento" name="dtNascimento">
+                </div>
+
+                <h3>Contato</h3>
+                <div class="dados">
+                    <label for="email">Email:</label>
+                    <input type="text" id="txEmail" name="email" placeholder="Preencha com Email">
+
+                    <label for="telefone">Telefone:</label>
+                    <input id="tel" type="tel" name="telefone" placeholder="Preencha com Telefone">
+                </div>
+
+                <h3>Endereço</h3>
+                <div class="dados">
+                    <label for="cep">CEP:</label>
+                    <input id="txCep" type="text" name="cep" placeholder="Preencha com CEP">
+
+                    <label for="logradouro">Logradouro:</label>
+                    <input type="text" id='txLogradouro' name="logradouro" placeholder="Preencha com Logradouro">
+
+                    <label for="complemento">Complemento:</label>
+                    <input type="text" id="txComplemento" name="complemento" placeholder="Preencha com Complemento">
+
+                    <label for="numero">Número:</label>
+                    <input type="text" id="txNumero" name="numero" placeholder="Preencha com Número">
+
+                    <label for="bairro">Bairro:</label>
+                    <input list="browsers" id="txBairro" placeholder="Selecione o bairro">
+
+                    <datalist id="browsers">
+                        <option value="Arroio da Manteiga">
+                        <option value="Boa Vista">
+                        <option value="Campestre">
+                        <option value="Campina">
+                        <option value="Centro">
+                        <option value="Cristo Rei">
+                        <option value="Duquede Caxias">
+                        <option value="Fazenda São Borja">
+                        <option value="Feitoria">
+                        <option value="Fião">
+                        <option value="Jardim América">
+                        <option value="Morrodo Espelho">
+                        <option value="Padre Reus">
+                        <option value="Pinheiro">
+                        <option value="Rio Branco">
+                        <option value="Riodos Sinos">
+                        <option value="Santa Teresa">
+                        <option value="Santo André">
+                        <option value="Santos Dumont">
+                        <option value="São João Batista">
+                        <option value="São José">
+                        <option value="São Miguel">
+                        <option value="Scharlau">
+                        <option value="Vicentina">
+
+                    </datalist>
+
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="txCidade" name="cidade" value='São Leopoldo'
+                        placeholder="Preencha com Cidade">
+
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="txUf" name="estado" value="Rio Grande do Sul"
+                        placeholder="Preencha com Estado">
+                </div>
+
+                <h3>Dados socioeconômicos</h3>
+                <div class="dados">
+                    <label for="Ocupacao">Qual sua ocupação no momento?</label>
+                    <input list="ocupacao" id="txOcupacao" placeholder="Selecione sua ocupação">
+                        <datalist id="ocupacao">
+                            <option value="Empregado com carteira assinada">
+                            <option value="Empregado sem carteira assinada">
+                            <option value="Autônomo">
+                            <option value="Microempresário">
+                            <option value="Desempregado">
+                            <option value="Aposentado">
+                            <option value="Estudante">
+                            <option value="Do Lar">
+                            <option value="Outro">
+                        </datalist>
+
+
+                    <label for="rendaFamiliar">Renda Familiar:</label>
+                    <input type="text" id="rendaFamiliar" name="rendaFamiliar"
+                        placeholder="Preencha com Renda Familiar">
+
+                    <label for="moradores">Numero de moradores da residência:</label>
+
+                    <input type="number" id="nroMoradores" name="moradores" min="1" max="20">
+
+                    <button id="confMoradores" type="button" >Confirmar</button>
+
+                    <div id="formMoradores">
+
+                    </div>
+
+                    <label for="qtdeFamiliares">Algum componente familiar necessita de cuidados constantes de outra
+                        pessoa? É pessoa com deficiência ou possui
+                        mobilidade reduzida?</label>
+                    <div>
+                        <input type="radio" id="naoCuidados" name="naoCuidados" value="naoCuidados">
+                        <label for="naoCuidados">Não</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="simCuidados" name="simCuidados" value="simCuidados">
+                        <label for="simCuidados">Sim</label> <input type="text" name="simCuidados"
+                            placeholder="Quais cuidados?">
+                    </div>
+
+
+                </div>
+
+                <h3>Agravos decorrentes da situação de emergência</h3>
+                <div class="dados">
+                    <legend>Em decorrência da Situação de Emergência, houve óbito na família?</legend>
+                    <div>
+                        <input type="radio" id="naoObito" name="naoObito" value="naoObito">
+                        <label for="naoObito">Não</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="simObito" name="simObito" value="simObito">
+                        <label for="simObito">Sim</label> <input type="text" name="simObito" placeholder="Quem?">
+                    </div>
+
+                    <br>
+                    <legend>Em decorrência da Situação de Emergência, houve desaparecidos na família?</legend>
+                    <div>
+                        <input type="radio" id="naoDesap" name="naoDesap" value="naoDesap">
+                        <label for="naoDesap">Não</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="simDesap" name="simDesap" value="simDesap">
+                        <label for="simDesap">Sim</label> <input type="text" name="simDesap" placeholder="Quem?">
+                    </div>
+                </div>
+
+                <h3>Situação da moradia</h3>
+                <div class="dados">
+                    <legend>A moradia foi atingida durante a Situação de Emergência?</legend>
+                    <div>
+                        <input type="radio" id="naoAtingida" name="situacao" value="naoAtingida">
+                        <label for="naoAtingida">Não</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="naoReparos" name="situacao" value="naoReparos">
+                        <label for="naoReparos">Sim, mas não precisa de reparos</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="simReparos" name="situacao" value="simReparos">
+                        <label for="sim">Sim, mas precisa de reparos</label> <input type="text" name="situacao"
+                            placeholder="Descreva a situação">
+                    </div>
+
+                    <br>
+                    <legend>A situação da família, NA Situação de Emergência é:</legend>
+                    <div>
+                        <input type="radio" id="desalojada" name="situacao" value="desalojada">
+                        <label for="nao">Desalojada (está na rua)</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="casaParente" name="situacao" value="casaParente">
+                        <label for="nao">Em casa de parente/amigo</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="aluguel" name="situacao" value="aluguel">
+                        <label for="nao">Pagamento de aluguel pelo poder público</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="mesmoLocal" name="situacao" value="mesmoLocal">
+                        <label for="nao"> No mesmo local de ANTES da situação de emergência</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="abrigo" name="situacao" value="abrigo">
+                        <label for="nao">Em abrigo Institucional. Qual?</label> <input type="text" name="situacao"
+                            placeholder="Cite o abrigo">
+                    </div>
+                    <div>
+                        <input type="radio" id="hotel" name="situacao" value="hotel">
+                        <label for="nao"> Em Hotel/Pousada. Qual?</label> <input type="text" name="situacao"
+                            placeholder="Cite o hotel/pousada">
+                    </div>
+                </div>
+
+                <h3>Necessidades Imediatas</h3>
+                <div class="dados">
+                    <div class="tipoAjuda">
+                        <legend>Tipo de Ajuda</legend>
+                        <input type="checkbox" id="financeira" name="financeira" value="Financeira">
+                        <label for="financeira">Financeira</label><br>
+
+                        <input type="checkbox" id="roupa" name="roupa" value="Roupa">
+                        <label for="roupa">Roupa</label><br>
+
+                        <input type="checkbox" id="alimento" name="alimento" value="Alimento">
+                        <label for="alimento">Alimento</label><br>
+
+                        <input type="checkbox" id="higienePessoal" name="higienePessoal" value="HigienePessoal">
+                        <label for="higienePessoal">Higiene Pessoal</label><br>
+
+                        <input type="checkbox" id="cobertor" name="cobertor" value="Cobertor">
+                        <label for="cobertor">Cobertor</label><br>
+
+                        <input type="checkbox" id="moradia" name="moradia" value="Moradia">
+                        <label for="moradia">Moradia</label><br>
+
+                        <input type="checkbox" id="medicamentos" name="medicamentos" value="Medicamentos">
+                        <label for="medicamentos">Medicamentos</label><br>
+
+                        <input type="checkbox" id="transporte" name="transporte" value="Transporte">
+                        <label for="transporte">Transporte</label><br>
+
+                        <input type="checkbox" id="documentos" name="documentos" value="Documentos">
+                        <label for="documentos">Documentos</label><br>
+
+                        <input type="checkbox" id="terapia" name="terapia" value="Terapia">
+                        <label for="terapia">Atendimento Psicossocial</label><br>
+
+                        <input type="checkbox" id="consulta-medica" name="consulta-medica" value="Consulta-medica">
+                        <label for="consulta-medica">Consulta médica</label><br>
+
+                        <input type="checkbox" id="auxilio-comunicacao" name="auxilio-comunicacao"
+                            value="Auxilio-comunicacao">
+                        <label for="auxilio-comunicacao">Auxílio na comunicação</label><br><br>
+
+                        <legend>Observação</legend>
+                        <textarea name="Observações" id="observacao"></textarea>
+
+                    </div>
+                </div>
+            </form>
+            <div class="buttons">
+                <button id='btEnviar' type="submit">Enviar</button>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
